@@ -6,21 +6,20 @@ class Resources {
     
 public :
     
-    string get_color();
-    string get_type();
-    string get_shape();
-    int get_cost();
-    int get_quantity();
+    virtual string get_color();
+    virtual string get_type();
+    virtual string get_shape();
+    virtual int get_cost();
+    virtual int get_quantity();
     
-    void set_type(string input);
-    void set_shape(string input);
-    void set_color(string input);
-    void set_cost(int k);
-    void set_quantity(int k);
-
-    Resources(string color,string type,string shape,int cost,int quantity);
- 
-    
+    virtual void set_type(string input);
+    virtual void set_shape(string input);
+    virtual void set_color(string input);
+    virtual void set_cost(int k);
+    virtual  void set_quantity(int k);
+    Resources(int quantity_coal,int quantity_oil,int quantity_garbage,int quantity_uranium);
+    Resources();
+  
 protected :
     
     string type;
@@ -30,49 +29,36 @@ protected :
     int quantity;
 };
 
-class Coal: Resources{
+class Coal : public Resources{
     
 public:
     
-    Coal();
-    Coal(int cost);
-    int get_cost();
-    void set_coast(int cost);
-    
+    Coal(int cost,int quantity);
   
 };
 
-class Oil : Resources{
+class Oil : public Resources{
     
 public:
     
-    Oil();
-    int get_cost();
-    void set_cost(int cost);
-    
+    Oil(int cost,int quantity);
     
 };
 
-class Garbage : Resources{
+class Garbage : public Resources{
     
 public:
     
-    Garbage();
-    int get_cost();
-    void set_cost(int cost);
-    
+   Garbage(int cost,int quantity);
 
   
 };
 
-class Uranium :Resources{
+class Uranium : public Resources{
     
 public:
     
-    int get_cost();
-    void set_cost(int cost);
-    
-
+    Uranium(int cost,int quantity);
  
 };
 

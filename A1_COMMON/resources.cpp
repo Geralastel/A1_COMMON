@@ -1,18 +1,16 @@
 #include "resources.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
-
-//Default constructor
-Resources::Resources(string color,string type,string shape,int cost,int quantity){
-    
-    this->color = color;
-    this->type = type;
-    this->shape = shape;
-    this->cost = cost;
-    this->quantity = quantity;
-};
-
+// Default Constructor
+Resources::Resources(){
+    color = "NA";
+    type = "NA";
+    shape = "NA";
+    cost = 0;
+    quantity = 0;
+}
 
 
 // getters for resources
@@ -58,4 +56,38 @@ void Resources::set_quantity(int k){
     quantity = k;
 }
 
+// Coal constructor
+Coal::Coal(int cost,int quantity){
+    color = "Brown";
+    type = "Coal";
+    shape = "Cube";
+    this->cost = cost;
+    this->quantity = quantity;
+}
+
+// Oil constructor
+Oil::Oil(int cost,int quantity){
+    color = "Black";
+    type = "Oil";
+    shape = "Cylinder";
+    this->cost = cost;
+    this->quantity = quantity;
+}
+
+// Garbage constructor
+Garbage::Garbage(int cost,int quantity){
+    color = "Yellow";
+    type = "Garbage";
+    shape = "Large Octagonal";
+    this->cost = cost;
+    this->quantity = quantity;
+}
+
+Uranium::Uranium(int cost,int quantity){
+    color = "Red";
+    type = "Uranium";
+    shape = "Small Octagonal";
+    this->cost = cost;
+    this->quantity = quantity;
+}
 
