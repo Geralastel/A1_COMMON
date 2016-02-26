@@ -1,15 +1,7 @@
-//
-//  main.cpp
-//  A1_COMMON
-//
-//  Created by Gian Matteo Colucci on 2016-02-24.
-//  Copyright © 2016 GIan Matteo Colucci. All rights reserved.
-//
+#include "player.h"
+#include "house.h"
+#include "resources.h"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
     return 0;
 }

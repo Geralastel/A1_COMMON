@@ -1,52 +1,35 @@
 #include "player.h"
-#include "house.h"
-#include "money.h"
-#include "resources.h"
 
-Money::Money(int k){
-        elektro = k;
+//getters
+int Player::get_color(){
+    return color;
+};
+string Player::get_company_name(){
+    return company_name;
 };
 
-Money::Money(){
-    elektro = 0;
-}
-
-House::House(int houses,int color){
-    this->houses = houses;
-    this->color = color;
+int Player::get_elektro(){
+    return elektro;
 };
 
-string House::color_bank(int player_number){
-    if (int player_number = 00)
-        house_color = "blue";
-    if (int player_number = 01)
-        house_color = "red";
-    if (int playe_number = 02)
-        house_color = "green";
-    if (int player_number = 03)
-        house_color = "yellow";
-    if (int player_number = 04)
-        house_color = "purple";
-    if (int player_number = 05)
-        house_color = "orange";
-    return house_color;
-}
-
-Resources::Resources(int c,int o,int g,int u){
-    coal = c;
-    oil = o;
-    garbage = g;
-    uranium = u;
+//setters
+void Player::set_color(int k){
+    color = k;
 };
 
+void Player::set_elektro(int k){
+    elektro = k;
+};
 
+void Player::set_company_name(string input){
+    company_name = input;
+};
 
-
-
-Player::Player(string company_name,int color){
+Player::Player(string company_name,int color,int elektro){
     this->company_name = company_name;
     this->color = color;
-}
+    this->elektro = elektro;
+};
 
 
 
