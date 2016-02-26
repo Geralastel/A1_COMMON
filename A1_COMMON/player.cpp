@@ -1,7 +1,18 @@
 #include "player.h"
+#include "resources.h"
+#include "house.h"
+#include <iostream>
+
+
+
+// add method that takes current value of elektro adds add_amount and returns total
+int Player::add_elektro(int add_amount){
+    elektro += add_amount;
+    return elektro;
+};
 
 //getters
-int Player::get_color(){
+string Player::get_color(){
     return color;
 };
 string Player::get_company_name(){
@@ -25,11 +36,53 @@ void Player::set_company_name(string input){
     company_name = input;
 };
 
-Player::Player(string company_name,int color,int elektro){
+void Player::set_number_of_players(int k) {
+    number_of_players = k;
+}
+
+
+
+// default Player constructor
+
+// Player constructor
+Player::Player(string company_name,string color){
     this->company_name = company_name;
     this->color = color;
-    this->elektro = elektro;
+    elektro = 50;
+    
+    resources[0] = new Coal(1, 0);
+    resources[1] = new Oil(3,0);
+    resources[2] = new Garbage(8,0);
+    resources[3] = new Uranium(12,0);
+    number_of_players++;
 };
+
+// Player destructor
+Player::~Player(){
+    --number_of_players;
+}
+
+void Player::info_card(){
+    cout << "Game Statistics " << endl <<  "-------------------" << endl;
+    cout << "Number of players: " << number_of_players << endl;
+    cout << "Resource prices " << endl << "-------------------" << endl;
+    cout << "Coal: " << resources[0]->get_cost() << endl;
+    cout << "Oil: "  << resources[1]->get_cost() << endl;
+    cout << "Garbage: " << resources[2]->get_cost() << endl;
+    cout << "Uranium: " << resources[3]->get_cost() << endl;
+}
+
+void Player::player_info(){
+    cout << "Company Name: " << company_name << endl;
+    cout << "Player Color: " << color << endl;
+    cout << "Amount of Elektro: " << elektro << endl;
+   
+    cout << "Quantity of Resources Owned" << endl << "-------------------" << endl;
+    cout << "Coal: " << resources[0]->get_quantity() << endl;
+    cout << "Oil: " << resources[1]->get_quantity() << endl;
+    cout << "Garbage: " << resources[2] ->get_quantity() << endl;
+    cout << "Uranium: " << resources[3] ->get_quantity() << endl;
+}
 
 
 

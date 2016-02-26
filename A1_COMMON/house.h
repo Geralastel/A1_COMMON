@@ -4,17 +4,18 @@ using namespace std;
 class House {
     
 public:
-    int houses_owned();
-    string get_house_color();
-    void set_color(int k);
+    
+    int get_houses();
     void set_houses(int k);
-    void set_house_color(string in);
-    string color_bank(int k);
-    House(int houses,int color);
+    void set_color(string input);
+    int add_house(int k);
+    string get_color();
+    House(int houses,string color);
+    House();
 
     
 private:
-    int color;
-    int houses;
+    
+    int number_of_houses;
     string house_color;
 };

@@ -1,22 +1,33 @@
 #pragma once
 #include <string>
+#include "resources.h"
 using namespace std;
 
 class Player {
     
 public:
+  
     string get_company_name();
-    int get_color();
+    string get_color();
     int get_elektro();
+    int add_elektro(int k);
     void set_color(int k);
     void set_elektro(int k);
     void set_company_name(string input);
-    Player(string company_name,int color,int elektro); // color will be between 0-5 each # associated with a color
-
+    void set_number_of_players(int k);
+    void info_card();
+    void player_info();
+    Player();
+    ~Player();
+    Player(string company_name,string color);
+    
 private:
-    int color;
+    
+    int number_of_players;
+    string color;
     string company_name;
     int elektro;
+    Resources *resources[4];
 };
 
 

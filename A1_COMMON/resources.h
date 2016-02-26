@@ -17,7 +17,6 @@ public :
     virtual void set_color(string input);
     virtual void set_cost(int k);
     virtual  void set_quantity(int k);
-    Resources(int quantity_coal,int quantity_oil,int quantity_garbage,int quantity_uranium);
     Resources();
   
 protected :
