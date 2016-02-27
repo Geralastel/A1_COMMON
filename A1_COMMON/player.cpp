@@ -50,6 +50,9 @@ Player::Player(string company_name,string color){
     this->color = color;
     elektro = 50;
     
+    holder = *new House(0,color);
+
+    
     resources[0] = new Coal(1, 0);
     resources[1] = new Oil(3,0);
     resources[2] = new Garbage(8,0);
@@ -63,25 +66,32 @@ Player::~Player(){
 }
 
 void Player::info_card(){
-    cout << "Game Statistics " << endl <<  "-------------------" << endl;
+    cout <<endl << "Game Statistics " << endl
+    <<  "---------------------------" << endl;
     cout << "Number of players: " << number_of_players << endl;
-    cout << "Resource prices " << endl << "-------------------" << endl;
+    cout << "Resource prices " << endl << "---------------------------" << endl;
     cout << "Coal: " << resources[0]->get_cost() << endl;
     cout << "Oil: "  << resources[1]->get_cost() << endl;
     cout << "Garbage: " << resources[2]->get_cost() << endl;
     cout << "Uranium: " << resources[3]->get_cost() << endl;
+    cout << "---------------------------" << endl;
 }
 
 void Player::player_info(){
+    cout << endl << "Player Statistics" << endl
+    << "---------------------------" << endl;
     cout << "Company Name: " << company_name << endl;
     cout << "Player Color: " << color << endl;
     cout << "Amount of Elektro: " << elektro << endl;
+    cout << "Number of Houses Owned: " << holder.get_houses() << endl;
    
-    cout << "Quantity of Resources Owned" << endl << "-------------------" << endl;
+    cout << "Quantity of Resources Owned" << endl
+    << "---------------------------" << endl;
     cout << "Coal: " << resources[0]->get_quantity() << endl;
     cout << "Oil: " << resources[1]->get_quantity() << endl;
     cout << "Garbage: " << resources[2] ->get_quantity() << endl;
     cout << "Uranium: " << resources[3] ->get_quantity() << endl;
+    cout << "---------------------------" << endl;
 }
 
 

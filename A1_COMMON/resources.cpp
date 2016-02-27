@@ -56,6 +56,17 @@ void Resources::set_quantity(int k){
     quantity = k;
 }
 
+//Resource information method that returns type,cost,color,shape
+void Resources::resource_info(){
+    cout << endl << "Resource Characteristics" << endl
+    << "---------------------------" << endl;
+    cout << "Type: " << type << endl;
+    cout << "Color: " << color << endl;
+    cout << "Shape: " << shape << endl;
+    cout << "Cost: " << cost << endl;
+    cout << "---------------------------" << endl;
+}
+
 // Coal constructor
 Coal::Coal(int cost,int quantity){
     color = "Brown";

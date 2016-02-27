@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "resources.h"
+#include "house.h"
 using namespace std;
 
 class Player {
@@ -17,6 +18,7 @@ public:
     void set_number_of_players(int k);
     void info_card();
     void player_info();
+    House holder;
     Player();
     ~Player();
     Player(string company_name,string color);

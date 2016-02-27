@@ -16,7 +16,8 @@ public :
     virtual void set_shape(string input);
     virtual void set_color(string input);
     virtual void set_cost(int k);
-    virtual  void set_quantity(int k);
+    virtual void set_quantity(int k);
+    virtual void resource_info();
     Resources();
   
 protected :
